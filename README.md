@@ -28,7 +28,6 @@ Before running the quickstart app, make sure you have:
 
 1. The tools required to run using the method of your choice:
    - Option 1: Running locally using Node.js: [Node.js (>=6)](https://nodejs.org) and [yarn](https://yarnpkg.com/en/docs/install)
-   - Option 2: Running in a Docker container: [Docker (>=1.13)](https://docs.docker.com/install/)
 2. A free HubSpot developer account ([sign up](https://app.hubspot.com/signup/developers))
 3. An app associated with your developer account ([create an app](https://developers.hubspot.com/docs/faq/how-do-i-create-an-app-in-hubspot))
 4. A HubSpot account to install the app in (you can use an existing one, or [create a test account](https://developers.hubspot.com/docs/faq/how-do-i-create-a-test-account))
@@ -56,19 +55,3 @@ _**Note:** You must be a super-admin for the account that you want to install th
    $ yarn start
    ```
 4. Open your browser to `http://localhost:3000/install` to kick off the OAuth 2.0 flow
-
----
-
-## Option 2: Running in a Docker container
-
-1. Build an image of the quickstart app
-
-```
-$ docker build -t hs-oauth-quickstart:latest git://github.com/HubSpot/oauth-quickstart-nodejs.git
-```
-
-2. Run a container with the new image
-
-```
-$ docker run --init -it -p 3000:3000 -e CLIENT_SECRET=$CLIENT_SECRET -e CLIENT_ID=$CLIENT_ID -e SCOPE=contacts,forms hs-oauth-quickstart:latest
-```
